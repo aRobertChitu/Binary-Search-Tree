@@ -30,6 +30,7 @@ public class Main {
 
         System.out.println(tree.contains(14));
         System.out.println(tree.contains(80));
+        System.out.println(tree.getSortedLinkedList());
 
 
     }

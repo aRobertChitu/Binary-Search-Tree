@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,4 +55,25 @@ public class BinarySearchTree {
         items.remove(0);
         items.forEach(integer ->  insert(root, integer));
     }
+
+    public List<Integer> getSortedLinkedList(){
+        LinkedList<Integer> responseList = new LinkedList<>();
+        sort(root, responseList);
+        return responseList;
+    }
+
+    private void sort(Node node, LinkedList<Integer> responseList){
+
+        if(node.getLeftNode() != null){
+            sort(node.getLeftNode(), responseList);
+        }
+
+        responseList.add(node.getValue());
+
+        if(node.getRightNode() != null){
+            sort(node.getRightNode(), responseList);
+        }
+    }
+
+
 }
